@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fotball</title>
 </head>
+<style>
+    .ramme {
+        border: 2px solid rgb(22, 88, 22); 
+        width: 900px; 
+        height: 500px;
+        margin: 20px auto; 
+        background-color: rgb(11, 127, 11);
+        position: relative;
+    }
+
+    .ramme img {
+        width: 100px; 
+        height: 100px; 
+        position: absolute;
+        bottom: 0;
+        left: 0; 
+    }
+
+    #knapp {
+         background-color: rgb(11, 127, 11);
+    }
+
+</style>
+
 <body>
-    
+    <div class="ramme">
+        <img id="ball1" src="fotball.png" alt="fotball">
+        <img id="ball2" src="fotball.png" alt="fotball">
+    </div>
+
+    <button id="knapp"> TRYKK </button>
+
+    <script src="fotball.js"></script>
 </body>
 </html>
