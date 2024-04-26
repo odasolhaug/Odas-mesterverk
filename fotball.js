@@ -1,6 +1,6 @@
 
-const ramme_width = 500
-const ramme_height = 400
+const ramme_width = 900
+const ramme_height = 500
 
 let ball1 = {
     html: document.getElementById("ball1"),
@@ -33,11 +33,13 @@ function flytt(ball) {
         ball.x_velocity = -ball.x_velocity
     }
     if (ball.y <= 0) {
-        //ball.y_velocity = -ball.y_velocity * 0.9
-        //
-        ball.y_velocity = 12
+        //ball.y_velocity = -ball.y_velocity * 0.9 
+        ball.y_velocity = 10
     }
-    
+    if (ball.y > ramme_height - ball.diameter) {
+        ball.y_velocity = -2
+    }
+
 }
 
 function tegn() {
@@ -49,3 +51,10 @@ function tegn() {
 //tegn()
 
 setInterval(tegn, 20)
+
+function spark1() {
+    ball1.y_velocity = 8
+}
+function spark2() {
+    ball2.y_velocity = 8
+}
