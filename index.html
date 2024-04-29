@@ -15,9 +15,9 @@
         position: relative;
     }
 
-    .ramme img {
-        width: 100px; 
-        height: 100px; 
+    .ramme .ball {
+        width: 90px; 
+        height: 90px; 
         position: absolute;
         bottom: 0;
         left: 0; 
@@ -30,12 +30,26 @@
          border: none; 
     }
 
+    .kurv {
+        width: 200px; 
+    }
+
+    #kurver {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 75px;
+    }
+
 </style>
 
 <body>
     <div class="ramme">
-        <img id="ball1" src="basketball.png" alt="fotball">
-        <img id="ball2" src="basketball.png" alt="fotball">
+        <img class="ball" id="ball1" src="basketball.png" alt="basketball">
+        <img class="ball" id="ball2" src="basketball.png" alt="basketball">
+        <div id="kurver"> 
+        <img class="kurv" id="kurvventre" src="kurv-venstre.png" alt="basketkurv">
+        <img class="kurv" id="kurvhoyre" src="kurv-hoyre.png" alt="basketkurv">
+        </div>
     </div>
 
     <button onclick="spark1()" class="knapp"> BALL 1 </button>
