@@ -1,0 +1,33 @@
+.ramme {
+    border: 2px solid rgb(41, 129, 229); 
+    width: 900px; 
+    height: 500px;
+    margin: 20px auto; 
+    background-color: rgb(145, 180, 237);
+    position: relative;
+}
+
+.ramme .ball {
+    width: 90px; 
+    height: 90px; 
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+}
+
+.knapp {
+     background-color: rgb(145, 17, 181);
+     color: white; 
+     padding: 10px; 
+     border: none; 
+}
+
+.kurv {
+    width: 200px; 
+}
+
+#kurver {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 75px;
+}
