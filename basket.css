@@ -22,6 +22,11 @@
      border: none; 
 }
 
+#knapper {
+    display: flex;
+    justify-content: space-around;
+}
+
 .kurv {
     width: 200px; 
 }
