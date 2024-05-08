@@ -1,6 +1,8 @@
 
 const ramme_width = 900
 const ramme_height = 500
+const kurv_width = 200
+const kurv_height = 195
 
 let ball1 = {
     html: document.getElementById("ball1"),
@@ -39,6 +41,11 @@ function flytt(ball) {
     if (ball.y > ramme_height - ball.diameter) {
         ball.y_velocity = -2
     }
+    //if (ball.x > ramme_width-ball.diameter-kurv_width & ball.y)... 
+    
+    //if (ball.x < kurv_width) {
+        //ball.x_velocity = -ball.x_velocity
+    //}
 
 }
 
@@ -57,4 +64,19 @@ function spark1() {
 }
 function spark2() {
     ball2.y_velocity = 8
+}
+
+
+
+addEventListener("keypress", tastetrykk)
+
+function tastetrykk(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        spark2()
+    }
+    if (event.key === "Tab") {
+        event.preventDefault();
+        spark1()
+    }
 }
