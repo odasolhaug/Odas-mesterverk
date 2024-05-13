@@ -23,6 +23,16 @@ let ball2 = {
     y_gravity: -0.2, 
 }
 
+const kurv_venstre = {
+    x: 0,
+    y: ramme_height - kurv_height
+}
+
+const kurv_hoyre = {
+    x: ramme_width - kurv_width,
+    y: ramme_height - kurv_height
+}
+
 
 function flytt(ball) {
     ball.y_velocity += ball.y_gravity
@@ -41,17 +51,31 @@ function flytt(ball) {
     if (ball.y > ramme_height - ball.diameter) {
         ball.y_velocity = -2
     }
-    //if (ball.x > ramme_width-ball.diameter-kurv_width & ball.y)... 
+    //if (ball.x > ramme_width-ball.diameter-kurv_width & ball.y > ramme_height-kurv_height) { //tja ikke helt bra 
+        //ball.x_velocity = -ball.x_velocity
+    //}
     
     //if (ball.x < kurv_width) {
         //ball.x_velocity = -ball.x_velocity
     //}
-
 }
+
+function kollisjon(ball, kurv) {
+    if (ball.x + ball.diameter >= kurv.x && ball.x <= kurv.x + kurv_width && ball.y <= kurv.y + kurv_height) {
+        ball.x_velocity = -ball.x_velocity
+    }
+    if (ball.y === kurv.y + kurv_height) {
+        y_gravity = -2
+    }
+}
+
+
 
 function tegn() {
     flytt(ball1)
     flytt(ball2)
+    kollisjon(ball1, kurv_venstre);
+    kollisjon(ball2, kurv_hoyre);
     //requestAnimationFrame(tegn)
 }
 
@@ -65,7 +89,6 @@ function spark1() {
 function spark2() {
     ball2.y_velocity = 8
 }
-
 
 
 addEventListener("keypress", tastetrykk)
