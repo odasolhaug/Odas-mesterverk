@@ -1,3 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+/* nav */
+h1 {
+    font-size: 60px;
+    color: rgb(41, 129, 229);
+    text-align: center;
+}
+
+nav {
+    background-color: white; 
+    border: 2px solid white; 
+    padding-top: 20px;
+    display: flex; 
+    align-items: center;
+    flex-direction: row;
+    max-width: 900px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.burger-meny ul {
+    list-style-type: none;
+    margin-right: 0px;
+    position: absolute;
+    display: none; 
+    background-color: white;
+}
+
+.burger-meny ul.active {
+    display: block; 
+}
+
+.burger-meny ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: rgb(41, 129, 229);
+}
+
+.burger-meny ul li a:hover {
+    text-decoration: underline;
+}
+
+.nav-toggle {
+    font-size: 60px;
+    cursor: pointer;
+    margin-right: 20px;
+    color: rgb(41, 129, 229);
+}
+
+/* basketspillet */
+
 .ramme {
     border: 2px solid rgb(41, 129, 229); 
     width: 900px; 
@@ -5,6 +71,7 @@
     margin: 20px auto; 
     background-color: rgb(145, 180, 237);
     position: relative;
+    margin-top: 150px;
 }
 
 .ramme .ball {
@@ -12,7 +79,7 @@
     height: 90px; 
     position: absolute;
     bottom: 0;
-    left: 450; 
+    left: 0; 
 }
 
 .knapp {
@@ -35,4 +102,16 @@
     display: flex;
     justify-content: space-between;
     margin-top: 75px;
+}
+
+/* hvordan spille */
+
+main {
+    max-width: 900px;
+    margin: auto;
+}
+
+#tastatur {
+    margin-top: 150px;
+    width: 500px; 
 }
