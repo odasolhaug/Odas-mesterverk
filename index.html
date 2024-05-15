@@ -30,6 +30,13 @@
                 <img class="kurv" id="kurvventre" src="bilder/kurv-venstre.png" alt="basketkurv">
                 <img class="kurv" id="kurvhoyre" src="bilder/kurv-hoyre.png" alt="basketkurv">
             </div>
+            <div id="overlay">
+                <button onclick="startSpill()">Start</button>
+            </div>
+            <div id="overlay_end">
+                <p>  </p>
+                <button onclick="location.reload()"> Spill igjen </button>
+            </div>
         </div>
         <div id="knapper">
             <button onclick="spark1()" class="knapp"> BALL 1 </button>
@@ -38,9 +45,6 @@
         <div id="poeng">
             <p id="poeng1"> </p>
             <p id="poeng2"> </p>
-        </div>
-        <div id="startdiv">
-            <button id="start" onclick="startGame()">Start spillet</button>
         </div>
     </main>
     <script src="basket.js"></script>
