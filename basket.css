@@ -118,6 +118,7 @@ header {
     left: 0;
     background-color: rgb(145, 180, 237) ;
     display: flex;
+    display: none; 
     justify-content: center;
     align-items: center;
   }
@@ -140,7 +141,6 @@ header {
     left: 0;
     background-color: rgb(145, 180, 237) ;
     display: flex;
-    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -165,5 +165,18 @@ main {
 
 #tastatur {
     margin-top: 150px;
-    width: 500px;
+    width: 900px;
+    
+}
+
+#forklaring {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+#forklaring p {
+    color: black; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
 }

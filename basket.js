@@ -1,4 +1,3 @@
-
 const ramme_width = 900
 const ramme_height = 500
 const kurv_width = 200
@@ -48,6 +47,7 @@ function startSpill() {
     let overlay = document.getElementById("overlay")
     overlay.style.display = "none"
 }
+
 function vinner() {
     let overlay_end = document.getElementById("overlay_end")
     overlay_end.style.display = "block"
@@ -58,7 +58,7 @@ function sjekkPoengsum() {
        vinner = 1
         vinner()
     }
-    else if (poeng2 === 10) {
+    if (poeng2 === 10) {
         vinner = 2
         vinner()
     }
