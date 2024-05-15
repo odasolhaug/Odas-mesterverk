@@ -2,28 +2,35 @@
 const ramme_width = 900
 const ramme_height = 500
 const kurv_width = 200
-const kurv_height = 195
+const kurv_height = 155 //195
+
+const poeng1_output = document.getElementById("poeng1")
+const poeng2_output = document.getElementById("poeng2")
 
 let poeng1 = 0
 let poeng2 = 0
+
+const ramme = document.getElementById("ramme")
 
 let ball1 = {
     html: document.getElementById("ball1"),
     diameter: 100,
     x: 0,
-    x_velocity: 5,
+    x_velocity: 6,
     y: 0,
-    y_velocity: 8,
+    y_velocity: 7,
     y_gravity: -0.2,
+    harTruffetKurv: false,
 }
 let ball2 = {
     html: document.getElementById("ball2"),
     diameter: 100,
     x: 0,
-    x_velocity: 6,
+    x_velocity: 4,
     y: 0,
-    y_velocity: 11,
+    y_velocity: 9,
     y_gravity: -0.2,
+    harTruffetKurv: false,
 }
 
 const kurv_venstre = {
@@ -35,6 +42,11 @@ const kurv_hoyre = {
     x: ramme_width - kurv_width,
     y: ramme_height - kurv_height
 }
+
+function startSpill() {
+    var overlay = document.getElementById("overlay");
+    overlay.style.display = "none";
+  }
 
 
 function flytt(ball) {
@@ -50,6 +62,7 @@ function flytt(ball) {
     if (ball.y <= 0) {
         ball.y_velocity = 10
         ball.y_gravity = -0.2
+        ball.harTruffetKurv = false
     }
     if (ball.y > ramme_height - ball.diameter) {
         ball.y_velocity = -2
@@ -62,16 +75,29 @@ function kollisjon(ball, kurv, ballNum) {
         ball.x_velocity = -ball.x_velocity
         ball.y_velocity = -ball.y_velocity
     }
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
 
-    if (ball.y > ramme_height - ball.diameter - 30 && ball.x + ball.diameter > kurv.x -55 && ball.x < kurv.x + kurv_width-55 && ballNum === 1) {
+    if (ball.y > ramme_height - ball.diameter - 30 && ball.x + ball.diameter > kurv.x -55 && ball.x < kurv.x + kurv_width-55 && ballNum === 1 && !ball.harTruffetKurv) {
         ball.y_gravity = -2
         poeng1 += 1
+        poeng1_output.innerHTML = "SCORE: " +poeng1
+        ball.harTruffetKurv = true
+
+        ramme.style.backgroundColor = "#" + randomColor
         //ball.y_velocity = -ball.y_velocity
         //&& ball.y > kurv.y + kurv_height
     }
-    else if (ball.y > ramme_height - ball.diameter - 30 && ball.x + ball.diameter > kurv.x + 55 && ball.x < kurv.x + kurv_width +55 && ballNum === 2) {
+    else if (ball.y > ramme_height - ball.diameter - 30 && ball.x + ball.diameter > kurv.x + 55 && ball.x < kurv.x + kurv_width +55 && ballNum === 2 && !ball.harTruffetKurv) {
         ball.y_gravity = -2
-        poeng2 += 1 
+        //if (ball.y_gravity === -2 && ball.y === 200) {
+            poeng2 += 1 
+            poeng2_output.innerHTML = "SCORE: " + poeng2
+            ball.harTruffetKurv = true
+
+            ramme.style.backgroundColor = "#" + randomColor
+        //}
+        //poeng2 += 1 
+        //poeng2_output.innerHTML = "Score ball 2: " + poeng2
     }
 }
 
@@ -104,7 +130,7 @@ function spark2() {
     ball2.y_velocity = 8
 }
 
-
+//Tastatur
 addEventListener("keypress", tastetrykk)
 
 function tastetrykk(event) {
@@ -120,7 +146,7 @@ function tastetrykk(event) {
     }
 }
 
-
+//Nav
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.nav-toggle').addEventListener('click', function () {
         document.querySelector('.burger-meny ul').classList.toggle('active');

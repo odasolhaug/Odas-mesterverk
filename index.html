@@ -23,7 +23,7 @@
         </nav>
     </header>
     <main>
-        <div class="ramme">
+        <div id="ramme">
             <img class="ball" id="ball1" src="bilder/basketball.png" alt="basketball">
             <img class="ball" id="ball2" src="bilder/basketball.png" alt="basketball">
             <div id="kurver">
@@ -34,6 +34,13 @@
         <div id="knapper">
             <button onclick="spark1()" class="knapp"> BALL 1 </button>
             <button onclick="spark2()" class="knapp"> BALL 2 </button>
+        </div>
+        <div id="poeng">
+            <p id="poeng1"> </p>
+            <p id="poeng2"> </p>
+        </div>
+        <div id="startdiv">
+            <button id="start" onclick="startGame()">Start spillet</button>
         </div>
     </main>
     <script src="basket.js"></script>
