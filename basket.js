@@ -6,9 +6,11 @@ const kurv_height = 155 //195
 const poeng1_output = document.getElementById("poeng1")
 const poeng2_output = document.getElementById("poeng2")
 
+const vinnertekst = document.getElementById("vinnertekst")
+
 let poeng1 = 0
 let poeng2 = 0
-let vinner = 0
+let spiller = 0
 
 const ramme = document.getElementById("ramme")
 
@@ -48,20 +50,23 @@ function startSpill() {
     overlay.style.display = "none"
 }
 
-function vinner() {
-    let overlay_end = document.getElementById("overlay_end")
-    overlay_end.style.display = "block"
-}
 
 function sjekkPoengsum() {
     if (poeng1 === 10) {
-       vinner = 1
+       spiller = 1
         vinner()
     }
     if (poeng2 === 10) {
-        vinner = 2
+        spiller = 2
         vinner()
     }
+}
+
+function vinner() {
+    let overlay_end = document.getElementById("overlay_end")
+    overlay_end.style.display = "flex"
+    overlay_end.style.flexDirection = "column"
+    vinnertekst.innerHTML = "Vinneren er spiller nr. " + spiller + "!"
 }
 
 function flytt(ball) {

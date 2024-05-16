@@ -117,8 +117,7 @@ header {
     top: 0;
     left: 0;
     background-color: rgb(145, 180, 237) ;
-    display: flex;
-    display: none; 
+    display: flex; 
     justify-content: center;
     align-items: center;
   }
@@ -140,7 +139,7 @@ header {
     top: 0;
     left: 0;
     background-color: rgb(145, 180, 237) ;
-    display: flex;
+    display: none; 
     justify-content: center;
     align-items: center;
 }
@@ -154,6 +153,13 @@ header {
     cursor: pointer;
     color: white; 
   }
+
+#overlay_end p {
+    padding: 20px; 
+    font-size: 50px;
+    color: rgb(41, 129, 229);
+
+}
 
 /* hvordan spille */
 

@@ -34,7 +34,7 @@
                 <button onclick="startSpill()">Start</button>
             </div>
             <div id="overlay_end">
-                <p>  </p>
+                <p id="vinnertekst"></p>
                 <button onclick="location.reload()"> Spill igjen </button>
             </div>
         </div>
@@ -43,8 +43,14 @@
             <button onclick="spark2()" class="knapp"> BALL 2 </button>
         </div>
         <div id="poeng">
-            <p id="poeng1"> </p>
-            <p id="poeng2"> </p>
+            <div>
+                <p id="poeng1"> </p>
+                <div id="output1"> </div>
+            </div>
+            <div>
+                <p id="poeng2"> </p>
+                <div id="output2"> </div>
+            </div>
         </div>
     </main>
     <script src="basket.js"></script>
